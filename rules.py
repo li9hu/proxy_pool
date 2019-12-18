@@ -15,6 +15,18 @@ PROXIES = {'http':'127.0.0.1:1080',
         'https':'127.0.0.1:1080'}
 PROXIES = None
 
+
+def get_ips(rule,url) ->list:
+    if rule == 1:
+        return  r1(rule,url)
+    elif rule ==2:
+        return r2(rule,url)
+    elif rule ==3:
+        return r3(rule,url)
+
+def msg(r):
+    print('\r'+color('[-]','Try connect url %s          '%str(r)),end='')
+
 def color(sign,args=''):
     colors = {'[-]':'\033[36m','[+]':'\033[32m','[!]':'\033[33m','[x]':'\033[31m'}
     if sign in colors:
@@ -35,22 +47,7 @@ def get_connect(url,proxies,r=''):
                     print('\r'+color('[x]',' reconnect  faild WEB %s        '%r),end='')
                     break
                 else :  continue
-            return  ''
-    
-
-
-def get_ips(rule,url) ->list:
-    if rule == 1:
-        return  r1(rule,url)
-    elif rule ==2:
-        return r2(rule,url)
-    elif rule ==3:
-        return r3(rule,url)
-
-def msg(r):
-    print('\r'+color('[-]','Try connect url %s          '%str(r)),end='')
-    
-
+            return  '' 
 
 def r1(rule,url):
     msg(rule)
