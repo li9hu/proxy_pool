@@ -1,6 +1,6 @@
 import   sys
 import time
-from concurrent.futures import ThreadPoolExecutor,wait,ALL_COMPLETED
+from concurrent.futures import ThreadPoolExecutor
 from rules import *
 
 total = 0
